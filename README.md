@@ -45,6 +45,9 @@ Start by creating the models and migrations for the following database tables:
 
 ![domain diagram](domain.png)
 
+If you use a Rails generator to create the models, make sure to use the
+`--no-test-framework` flag to avoid overwriting the test files.
+
 Add any code needed in the model files to establish the relationships.
 
 Then, run the migrations and seed file:
