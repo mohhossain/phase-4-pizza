@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function PizzaForm({ restaurantId }) {
+function PizzaForm({ restaurantId, onAddPizza }) {
   const [pizzas, setPizzas] = useState([]);
   const [pizzaId, setPizzaId] = useState("");
   const [price, setPrice] = useState("");
@@ -28,7 +28,7 @@ function PizzaForm({ restaurantId }) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((newPizza) => {
-          setPizzas((pizzas) => [...pizzas, newPizza]);
+          onAddPizza(newPizza);
           setFormErrors([]);
         });
       } else {
