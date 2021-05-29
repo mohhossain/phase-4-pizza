@@ -33,6 +33,8 @@ You can run your React app on [`localhost:4000`](http://localhost:4000) by runni
 npm start --prefix client
 ```
 
+There are also tests included which you can run using `rspec` to check your work.
+
 ## Models
 
 You need to create the following relationships:
