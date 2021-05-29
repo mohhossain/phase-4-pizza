@@ -80,19 +80,11 @@ RSpec.describe "Restaurants", type: :request do
     context "with a valid ID" do
 
       it "deletes the Restaurant" do
-        expect { delete "/restaurants/#{Restaurant.first.id}" }.to change(Restaurant, :count).by(1)
+        expect { delete "/restaurants/#{Restaurant.first.id}" }.to change(Restaurant, :count).by(-1)
       end
 
       it "deletes the associated RestaurantPizzas" do
-        expect { delete "/restaurants/#{Restaurant.first.id}" }.to change(RestaurantPizza, :count).by(2)
-      end
-
-      it "returns an empty response body" do
-        expect(response.body).to be_empty
-      end
-
-      it "returns a status of 204 (no content)" do
-        expect(response).to have_http_status(:no_content)
+        expect { delete "/restaurants/#{Restaurant.first.id}" }.to change(RestaurantPizza, :count).by(-2)
       end
 
     end
