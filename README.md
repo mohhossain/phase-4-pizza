@@ -33,7 +33,18 @@ You can run your React app on [`localhost:4000`](http://localhost:4000) by runni
 npm start --prefix client
 ```
 
+You are not being assessed on React, and you don't have to update any of the React
+code; the frontend code is available just so that you can test out the behavior
+of your API in a realistic setting.
+
 There are also tests included which you can run using `rspec` to check your work.
+
+Depending on your preference, you can either check your progress by:
+
+- Running `rspec` and seeing if your code passes the tests
+- Running the React application in the browser and interacting with the API via
+  the frontend
+- Running the Rails server and using Postman make requests
 
 ## Models
 
