@@ -23,6 +23,11 @@ RSpec.describe "Pizzas", type: :request do
         }
       ])
     end
+
+    it 'returns a status of 200 (OK)' do
+      get '/pizzas'
+      expect(response).to have_http_status(:ok)
+    end
   end
 
 end

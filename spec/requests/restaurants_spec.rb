@@ -28,6 +28,11 @@ RSpec.describe "Restaurants", type: :request do
         }
       ])
     end
+
+    it 'returns a status of 200 (OK)' do
+      get '/restaurants'
+      expect(response).to have_http_status(:ok)
+    end
   end
 
   describe "GET /restaurants/:id" do
@@ -53,6 +58,11 @@ RSpec.describe "Restaurants", type: :request do
             }
           ]
         })
+      end
+
+      it 'returns a status of 200 (OK)' do
+        get "/restaurants/#{Restaurant.first.id}"
+        expect(response).to have_http_status(:ok)
       end
       
     end
