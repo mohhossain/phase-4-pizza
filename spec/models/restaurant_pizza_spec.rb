@@ -6,15 +6,14 @@ RSpec.describe RestaurantPizza, type: :model do
   let(:pizza) { Pizza.create(name: "Cheese", ingredients: "Dough, Tomato Sauce, Cheese") }
 
   describe "relationships" do
-      
 
-    it 'belongs to a Restaurant' do
+    it 'can access the associated restaurant' do
       restaurant_pizza = RestaurantPizza.create(pizza_id: pizza.id, restaurant_id: restaurant.id, price: 10)
 
       expect(restaurant_pizza.restaurant).to eq(restaurant)
     end
 
-    it 'belongs to a Pizza' do
+    it 'can access the associated pizza' do
       restaurant_pizza = RestaurantPizza.create(pizza_id: pizza.id, restaurant_id: restaurant.id, price: 10)
 
       expect(restaurant_pizza.pizza).to eq(pizza)
