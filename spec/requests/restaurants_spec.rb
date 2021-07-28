@@ -29,6 +29,16 @@ RSpec.describe "Restaurants", type: :request do
       ])
     end
 
+    it 'does not return any nested pizzas' do
+      get '/restaurants'
+
+      expect(response.body).not_to include_json([
+        {
+          pizzas: a_kind_of(Array)
+        }
+      ])
+    end
+
     it 'returns a status of 200 (OK)' do
       get '/restaurants'
       expect(response).to have_http_status(:ok)
